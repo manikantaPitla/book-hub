@@ -1,0 +1,146 @@
+.login-container {
+  background-color: #f8fafc;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.login-page-image-lg {
+  margin: 0;
+  height: 100vh;
+  width: 700px;
+  object-fit: fill;
+  object-position: center center;
+}
+
+.form-main-container {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card {
+  background-color: #ffffff;
+  width: 440px;
+  /* height: 484px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.website-logo {
+  width: 141px;
+
+  margin-bottom: 30px;
+}
+
+.input-elements {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label-text {
+  color: var(--light-grey-color);
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.input-element {
+  width: 350px;
+  height: 50px;
+  border: 1px solid #c3cad9;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 12px;
+  outline: none;
+  color: #183b56;
+}
+
+.login-btn {
+  background-color: #0284c7;
+  color: #ffffff;
+  width: 350px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-page-image-sm {
+  display: none;
+}
+
+.error-message {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ef4444;
+}
+
+@media screen and (max-width: 1200px) {
+  .login-page-image-lg {
+    width: 50%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .login-page-image-lg {
+    width: 40%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-page-image-lg {
+    display: none;
+  }
+
+  .login-page-image-sm {
+    display: block;
+    width: 216px;
+  }
+
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 30px;
+  }
+
+  .website-logo {
+    margin-bottom: 20px;
+    align-self: center;
+    width: 104px;
+    margin-top: 20px;
+  }
+
+  .form-card,
+  .form-main-container {
+    width: 100%;
+    padding: 0;
+    align-items: flex-start;
+  }
+  .input-element,
+  .input-elements {
+    width: 100%;
+  }
+
+  .input-element {
+    height: 45px;
+  }
+  .login-btn {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,154 @@
+.home-container {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.home-content {
+  overflow-y: auto;
+  flex-grow: 2;
+  padding: 30px;
+}
+
+.home-content-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0px;
+}
+
+.home-content-description {
+  font-size: 15px;
+  color: var(--text-dark-grey);
+  max-width: 60%;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.slide-books-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.slide-books-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slide-books-title {
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.find-books-btn,
+.retry-btn {
+  background-color: var(--main-color);
+  outline: none;
+  border: none;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.slide-books-slick-container {
+  width: 100%;
+}
+
+.find-book-btn-sm {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .home-content {
+    padding: 0px;
+  }
+
+  .home-text-container {
+    padding: 20px;
+  }
+
+  .home-content-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .home-content-description {
+    font-size: 14px;
+    max-width: 100%;
+    line-height: 24px;
+  }
+
+  .slide-books-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .find-book-btn-lg {
+    display: none;
+  }
+
+  .find-book-btn-sm {
+    display: block;
+    margin: 10px 0px 20px 0px;
+    padding: 10px 12px;
+  }
+
+  .slide-books-container {
+    border-radius: 0px;
+    padding: 10px;
+  }
+}
+
+.loader-container,
+.failure-container {
+  width: 100%;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.failure-img {
+  width: 280px;
+}
+
+.failure-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 540px) {
+  .slide-books-slick-container {
+    overflow: hidden;
+  }
+
+  .loader-container,
+  .failure-container {
+    width: 100%;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+  }
+
+  .failure-img {
+    width: 220px;
+  }
+
+  .failure-text {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+  }
+}

@@ -1,0 +1,135 @@
+.book-detail-container {
+  height: 100vh;
+  background-color: var(--bg-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  color: var(--text-light-blue);
+}
+
+.book-detail-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.book-detail-card {
+  margin-top: 40px;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-light-blue);
+}
+
+.book-top-detail-container {
+  display: flex;
+  align-items: center;
+}
+
+.b-d-book-image {
+  width: 210px;
+  height: 264px;
+  border-radius: 8px;
+  margin: 0px 30px;
+}
+
+.b-d-book-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-light-blue);
+}
+
+.star {
+  font-size: 22px;
+  color: #fbbf24;
+  margin-left: 10px;
+  margin-right: 4px;
+  transform: translateY(4px);
+}
+
+.b-d-book-author-name,
+.b-d-book-rating,
+.b-d-book-reading-status {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.d-book-reading-status-active {
+  color: #0284c7;
+}
+
+.hr-line {
+  background-color: #94a3b8;
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.author-book-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.author-book-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.book-detail-loading-container {
+  height: 50vh;
+}
+
+@media screen and (max-width: 768px) {
+  .book-detail-card {
+    margin-top: 30px;
+    width: 90%;
+    padding: 25px;
+    background-color: transparent;
+  }
+
+  .b-d-book-image {
+    width: 190px;
+    height: 244px;
+  }
+
+  .book-top-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-main-context-container {
+    text-align: center;
+  }
+
+  .b-d-book-title {
+    font-size: 22px;
+  }
+
+  .star {
+    font-size: 18px;
+  }
+
+  .b-d-book-author-name,
+  .b-d-book-rating,
+  .b-d-book-reading-status {
+    font-size: 16px;
+  }
+
+  .author-book-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .author-book-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
