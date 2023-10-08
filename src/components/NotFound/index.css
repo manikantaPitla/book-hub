@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: (--bg-white);
   color: var(--text-light-blue);
 }
 
@@ -12,12 +13,12 @@
 }
 
 .page-not-found-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
 }
 
 .page-not-found-description {
-  font-size: 20px;
+  font-size: 16px;
   max-width: 40%;
   text-align: center;
 }

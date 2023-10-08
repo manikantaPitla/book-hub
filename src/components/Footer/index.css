@@ -6,7 +6,7 @@
   justify-content: center;
   padding: 30px;
   list-style: none;
-  color: #3d3c3c;
+  color: var(--text-color);
 }
 
 .footer-icons {
@@ -19,13 +19,13 @@
 
 .footer-icon-item {
   font-size: 18px;
-  padding: 0px 10px;
+  margin: 0px 8px;
   cursor: pointer;
 }
 
 .footer-contact-text {
+  margin-top: 20px;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-  margin: 0;
 }

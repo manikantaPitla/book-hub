@@ -1,5 +1,5 @@
 .login-container {
-  background-color: #f8fafc;
+  background-color: var(--bg-color);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 .form-card {
-  background-color: #ffffff;
+  background-color: var(--bg-white);
   width: 440px;
   /* height: 484px; */
   display: flex;
@@ -51,6 +51,7 @@
 }
 
 .input-element {
+  background-color: transparent;
   width: 350px;
   height: 50px;
   border: 1px solid #c3cad9;
@@ -59,7 +60,7 @@
   font-weight: 400;
   padding: 12px;
   outline: none;
-  color: #183b56;
+  color: var(--text-color);
 }
 
 .login-btn {

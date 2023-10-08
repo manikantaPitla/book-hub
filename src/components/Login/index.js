@@ -1,6 +1,7 @@
 import './index.css'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
   state = {username: '', password: '', isErrorOccur: false, errorMessage: ''}
@@ -55,6 +56,11 @@ class Login extends Component {
   render() {
     const {errorMessage, isErrorOccur, username, password} = this.state
 
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div className="login-container">
         <img
@@ -65,14 +71,14 @@ class Login extends Component {
         <img
           className="login-page-image-sm"
           src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696420594/Book%20Hub/login-page-img-sm.png"
-          alt="login page poster"
+          alt="website login"
         />
         <div className="form-main-container">
           <form className="form-card" onSubmit={this.login}>
             <img
               className="website-logo"
               src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696434886/Book%20Hub/bookhub-web-logo.svg"
-              alt="website logo"
+              alt="login website logo"
             />
             <div className="input-elements">
               <label className="label-text" htmlFor="input-username">

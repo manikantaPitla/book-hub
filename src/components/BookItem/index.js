@@ -1,6 +1,6 @@
 import './index.css'
 import {Link} from 'react-router-dom'
-import {AiFillStar} from 'react-icons/ai'
+import {BsFillStarFill} from 'react-icons/bs'
 
 const BookItem = props => {
   const {booksList} = props
@@ -15,7 +15,7 @@ const BookItem = props => {
           <p className="book-item-author-name">{authorName}</p>
           <p className="book-item-rating">
             Avg Rating
-            <AiFillStar className="star book-item-star" />
+            <BsFillStarFill className="star book-item-star" />
             {rating}
           </p>
           <p className="book-item-reading-status">

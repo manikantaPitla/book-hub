@@ -1,5 +1,7 @@
 import './index.css'
 import {Component} from 'react'
+import {FaMoon} from 'react-icons/fa'
+import {AiFillCloseCircle, AiOutlineMenu} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import {withRouter, Link} from 'react-router-dom'
 
@@ -10,6 +12,11 @@ class Header extends Component {
     if (window.innerWidth < 768) {
       this.setState({isNavLinksVisible: false})
     }
+  }
+
+  toggleDarkMode = () => {
+    const main = document.querySelector('.main')
+    main.classList.toggle('dark-mode')
   }
 
   logout = () => {
@@ -34,22 +41,20 @@ class Header extends Component {
     const {isNavLinksVisible} = this.state
     return (
       <div className="header-container">
-        <img
-          className="header-website-logo"
-          src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696434886/Book%20Hub/bookhub-web-logo.svg"
-          alt="website logo"
-        />
+        <Link to="/">
+          <img
+            className="header-website-logo"
+            src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696434886/Book%20Hub/bookhub-web-logo.svg"
+            alt="website logo"
+          />
+        </Link>
         <div className="nav-menu-container">
           <button
             type="button"
             className="menu-close-btn"
             onClick={this.onClickMenu}
           >
-            <img
-              className="menu-icon"
-              src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696486450/Book%20Hub/menu-icon.svg"
-              alt="menu-icon"
-            />
+            <AiOutlineMenu className="menu-icon" />
           </button>
         </div>
         <ul className="nav-links-lg">
@@ -59,9 +64,18 @@ class Header extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/book-shelves">
+            <Link to="/shelf">
               <p className={`nav-link-item ${isShelvesActive}`}>Bookshelves</p>
             </Link>
+          </li>
+          <li>
+            <button
+              className="theme-btn"
+              type="button"
+              onClick={this.toggleDarkMode}
+            >
+              <FaMoon className="nav-link-item" />
+            </button>
           </li>
           <li>
             <button
@@ -81,9 +95,18 @@ class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/book-shelves">
+              <Link to="/shelf">
                 <p className="nav-link-item">Bookshelves</p>
               </Link>
+            </li>
+            <li>
+              <button
+                className="theme-btn"
+                type="button"
+                onClick={this.toggleDarkMode}
+              >
+                <FaMoon className="nav-link-item" />
+              </button>
             </li>
             <li>
               <button
@@ -100,10 +123,7 @@ class Header extends Component {
                 className="menu-close-btn"
                 onClick={this.onClickMenu}
               >
-                <img
-                  src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696489738/Book%20Hub/close-icon.svg"
-                  alt="close icon"
-                />
+                <AiFillCloseCircle className="menu-close-icon" />
               </button>
             </li>
           </ul>

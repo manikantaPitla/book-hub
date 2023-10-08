@@ -1,6 +1,6 @@
 import './index.css'
 import {Component} from 'react'
-import {AiFillStar} from 'react-icons/ai'
+import {BsFillStarFill} from 'react-icons/bs'
 
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
@@ -69,7 +69,7 @@ class BookDetail extends Component {
     <div className="failure-container">
       <img
         src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696500698/Book%20Hub/failure-cat.svg"
-        alt="failure img"
+        alt="failure view"
         className="failure-img"
       />
       <p className="failure-text">Something went wrong, Please try again.</p>
@@ -107,11 +107,11 @@ class BookDetail extends Component {
             <p className="b-d-book-author-name">{data.authorName}</p>
             <p className="b-d-book-rating">
               Avg Rating
-              <AiFillStar className="star" />
+              <BsFillStarFill className="star" />
               {data.rating}
             </p>
             <p className="b-d-book-reading-status">
-              Status :{' '}
+              Status:{' '}
               <span className="d-book-reading-status-active">
                 {data.readStatus}
               </span>

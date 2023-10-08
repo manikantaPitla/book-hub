@@ -3,6 +3,7 @@
 * {
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
+  transition: background-color 0.4s, border 0.4s;
 }
 
 body {
@@ -19,13 +20,32 @@ a {
 }
 
 :root {
-  --text-light-blue: #334155;
+  --bg-white: #ffffff;
   --bg-color: #f5f7fa;
+  --text-light-blue: #334155;
   --text-dark-grey: #475569;
   --text-color: #1e293b;
+
+  --text-dark: #222222;
+
   --light-grey-color: #5a7184;
   --border-color: #e4e7eb;
   --main-color: #0284c7;
+
+  --dark-light-rgba: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode {
+  --bg-white: #1c1c1c;
+  --bg-color: #181818;
+  --text-dark-grey: #fefefe;
+  --text-dark: #fefefe;
+  --border-color: #272d35;
+  --text-light-blue: #f0f0f0;
+  --light-grey-color: #f1f4f6;
+  --text-color: #f5f7fa;
+
+  --dark-light-rgba: rgba(255, 255, 255, 0.3);
 }
 
 .main {
@@ -34,4 +54,14 @@ a {
 
 button {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-light-rgba);
+  border-radius: 10px;
 }

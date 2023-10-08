@@ -1,9 +1,11 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {AiOutlineSearch} from 'react-icons/ai'
+import {BsSearch} from 'react-icons/bs'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import BookItem from '../BookItem'
+import Footer from '../Footer'
+
 import './index.css'
 
 const bookshelvesList = [
@@ -42,6 +44,7 @@ class BookShelves extends Component {
     currentApiStatus: apiStatus.initial,
     searchInput: '',
     booksList: [],
+    currentShelve: bookshelvesList[0].label,
   }
 
   componentDidMount() {
@@ -90,12 +93,12 @@ class BookShelves extends Component {
     }
   }
 
-  onClickChangeActiveShelve = active => {
-    this.setState({activeShelve: active}, this.getAllBooks)
+  onClickChangeActiveShelve = (tab, label) => {
+    this.setState({activeShelve: tab, currentShelve: label}, this.getAllBooks)
   }
 
   onChangeSearchInput = e => {
-    this.setState({searchInput: e.target.value}, this.getAllBooks)
+    this.setState({searchInput: e.target.value})
   }
 
   onClickSearchBtn = () => {
@@ -112,7 +115,7 @@ class BookShelves extends Component {
     <div className="failure-container book-shelves-failure-container">
       <img
         src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696500698/Book%20Hub/failure-cat.svg"
-        alt="failure img"
+        alt="failure view"
         className="failure-img"
       />
       <p className="failure-text">Something went wrong, Please try again.</p>
@@ -130,10 +133,10 @@ class BookShelves extends Component {
         <img
           className="failure-img"
           src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696676268/Book%20Hub/no-results-found-png.png"
-          alt="no results"
+          alt="no books"
         />
         <p className="failure-text">
-          Your search for {`${searchInput}`} did not find any matches.
+          Your search for {searchInput} did not find any matches.
         </p>
       </div>
     )
@@ -165,14 +168,14 @@ class BookShelves extends Component {
   }
 
   render() {
-    const {activeShelve, searchInput} = this.state
+    const {activeShelve, searchInput, currentShelve} = this.state
 
     return (
       <div className="book-shelves-container">
         <Header shelves />
         <div className="book-shelves-content-container">
           <div className="book-shelves-responsive-wrapper">
-            <div className="search-container search-container-sm">
+            {/* <div className="search-container search-container-sm">
               <input
                 className="search-input"
                 type="search"
@@ -184,10 +187,11 @@ class BookShelves extends Component {
                 type="button"
                 className="search-btn"
                 onClick={this.onClickSearchBtn}
+                testid="searchButton"
               >
-                <AiOutlineSearch className="search-icon" />
+                <BsSearch className="search-icon" />
               </button>
-            </div>
+            </div> */}
             <div className="book-shelves-sidebar">
               <h1 className="book-shelves-title">Bookshelves</h1>
               <ul className="book-shelve-list">
@@ -198,7 +202,9 @@ class BookShelves extends Component {
                         each.value === activeShelve && 'active-shelve'
                       }`}
                       type="button"
-                      onClick={() => this.onClickChangeActiveShelve(each.value)}
+                      onClick={() =>
+                        this.onClickChangeActiveShelve(each.value, each.label)
+                      }
                     >
                       {each.label}
                     </button>
@@ -208,7 +214,7 @@ class BookShelves extends Component {
             </div>
             <div className="book-display-responsive-container">
               <div className="book-display-top-section">
-                <h1 className="all-books-title">All Books</h1>
+                <h1 className="all-books-title">{`${currentShelve} Books`}</h1>
                 <div className="search-container search-container-lg">
                   <input
                     className="search-input"
@@ -220,13 +226,15 @@ class BookShelves extends Component {
                   <button
                     type="button"
                     className="search-btn"
+                    testid="searchButton"
                     onClick={this.onClickSearchBtn}
                   >
-                    <AiOutlineSearch className="search-icon" />
+                    <BsSearch className="search-icon" />
                   </button>
                 </div>
               </div>
               <ul className="books-list-container">{this.renderBody()}</ul>
+              <Footer />
             </div>
           </div>
         </div>

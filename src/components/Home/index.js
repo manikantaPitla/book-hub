@@ -2,6 +2,7 @@ import {Component} from 'react'
 import './index.css'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
+import {Link} from 'react-router-dom'
 import Header from '../Header'
 import Footer from '../Footer'
 import TopRatedBooks from '../TopRatedBooks'
@@ -67,7 +68,7 @@ class Home extends Component {
     <div className="failure-container">
       <img
         src="https://res.cloudinary.com/df9fyawpk/image/upload/v1696500698/Book%20Hub/failure-cat.svg"
-        alt="failure img"
+        alt="failure view"
         className="failure-img"
       />
       <p className="failure-text">Something went wrong, Please try again.</p>
@@ -84,9 +85,9 @@ class Home extends Component {
   renderSuccess = () => {
     const {topRatedBooksData} = this.state
     return (
-      <div className="slide-books-slick-container">
+      <ul className="slide-books-slick-container">
         <TopRatedBooks topRatedBooksData={topRatedBooksData} />
-      </div>
+      </ul>
     )
   }
 
@@ -117,16 +118,23 @@ class Home extends Component {
               enjoyed in the past, and we will give you surprisingly insightful
               recommendations.
             </p>
-            <button type="button" className="find-books-btn find-book-btn-sm">
-              Find Books
-            </button>
+            <Link to="/shelf">
+              <button type="button" className="find-books-btn find-book-btn-sm">
+                Find Books
+              </button>
+            </Link>
           </div>
           <div className="slide-books-container">
             <div className="slide-books-title-container">
               <h1 className="slide-books-title">Top Rated Books</h1>
-              <button type="button" className="find-books-btn find-book-btn-lg">
-                Find Books
-              </button>
+              <Link to="/shelf">
+                <button
+                  type="button"
+                  className="find-books-btn find-book-btn-lg"
+                >
+                  Find Books
+                </button>
+              </Link>
             </div>
             {this.renderBody()}
           </div>

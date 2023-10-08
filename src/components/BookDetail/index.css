@@ -18,7 +18,7 @@
 .book-detail-card {
   margin-top: 40px;
   width: 80%;
-  background-color: #ffffff;
+  background-color: var(--bg-white);
   border-radius: 10px;
   padding: 40px;
   display: flex;
@@ -33,20 +33,20 @@
 }
 
 .b-d-book-image {
-  width: 210px;
+  width: 200px;
   height: 264px;
   border-radius: 8px;
   margin: 0px 30px;
 }
 
 .b-d-book-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--text-light-blue);
 }
 
 .star {
-  font-size: 22px;
+  font-size: 20px;
   color: #fbbf24;
   margin-left: 10px;
   margin-right: 4px;
@@ -56,7 +56,7 @@
 .b-d-book-author-name,
 .b-d-book-rating,
 .b-d-book-reading-status {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -71,12 +71,12 @@
 }
 
 .author-book-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .author-book-description {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 28px;
 }
@@ -94,7 +94,7 @@
   }
 
   .b-d-book-image {
-    width: 190px;
+    width: 180px;
     height: 244px;
   }
 
